@@ -123,8 +123,8 @@ total = 0
 # loop over frames from the video streams
 while True:
 	# grab the frames from their respective video streams
-	left = leftStream.read(0)
-	right = rightStream.read(1)
+	left = leftStream.read()
+	right = rightStream.read()
 
 	# resize the frames
 	left = imutils.resize(left, width=400)
