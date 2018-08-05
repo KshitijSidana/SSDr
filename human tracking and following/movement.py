@@ -16,6 +16,7 @@ xWidth = 450                 # x+w
 area = (xCentre - xWidth) * (yCentre - yHeight)   # computing area of the block
 centerX = (xCentre + xWidth) / 2      # finding ideal x center
 value=50
+value2=-50
 def moveForward():
     # all forward movement code with high speed
     GPIO.output(17,True);
@@ -52,5 +53,5 @@ def minimiseError(x, y, xw, yh):         # the function for movement decision...
         stopMoving()
     if(centerX-centerImgX>value):
         moveLeft()
-    elif(centerX-centerImgX<value):
+    elif(centerX-centerImgX<value2):
         moveRight()
