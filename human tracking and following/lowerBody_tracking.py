@@ -1,5 +1,6 @@
 import cv2
 from movement import minimiseError
+from movement import stopMovement
 
 # cascade code
 
@@ -24,6 +25,7 @@ while 1:
 
 cap.release()
 cv2.destroyAllWindows()
+stopMovement();
 
 
 
