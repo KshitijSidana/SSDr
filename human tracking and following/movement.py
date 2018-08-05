@@ -9,13 +9,12 @@ GPIO.setup(22,GPIO.OUT) # left backward
 GPIO.setup(23,GPIO.OUT) # right backward
 
 # these are the paramenters for ideal human image
-yCentre = 300                  # y ideal
-yHeight = 420                 # y+h
-xCentre = 300                # x ideal
-xWidth = 400                 # x+w
+yCentre = 200                  # y ideal
+yHeight = 400                 # y+h
+xCentre = 250                # x ideal
+xWidth = 450                 # x+w
 area = (xCentre - xWidth) * (yCentre - yHeight)   # computing area of the block
 centerX = (xCentre + xWidth) / 2      # finding ideal x center
-centerY = (yCentre + yHeight) / 2     # finding ideal y center
 value=50
 def moveForward():
     # all forward movement code with high speed
@@ -46,9 +45,8 @@ def moveLeft():
     GPIO.PWM(23,100);
 def minimiseError(x, y, xw, yh):         # the function for movement decision....based on PID not total
     centerImgX = (x + xw) / 2
-    centerImgY = (y + yh) / 2
     areaImg = (xw - x) * (yh - y)
-    if (areaImg < area and abs(centerX-centerImgX)<=value and abs(centerY-centerImgX)<=value):
+    if (areaImg < area and abs(centerX-centerImgX)<=value):
         moveForward()
     elif(areaImg>=area):
         stopMoving()
