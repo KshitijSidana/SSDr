@@ -9,14 +9,14 @@ GPIO.setup(22,GPIO.OUT) # left backward
 GPIO.setup(23,GPIO.OUT) # right backward
 
 # these are the paramenters for ideal human image
-yCentre = 200                  # y ideal
-yHeight = 400                 # y+h
-xCentre = 250                # x ideal
-xWidth = 450                 # x+w
+yCentre = 70                  # y ideal
+yHeight = 220                 # y+h
+xCentre = 100                # x ideal
+xWidth = 230                 # x+w
 area = (xCentre - xWidth) * (yCentre - yHeight)   # computing area of the block
 centerX = (xCentre + xWidth) / 2      # finding ideal x center
-value=50
-value2=-50
+value=20
+value2=-20
 def moveForward():
     # all forward movement code with high speed
     GPIO.output(17,True);
