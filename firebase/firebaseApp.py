@@ -14,5 +14,19 @@ def right(speed):
     firebase.patch('/movement',{"forward":1,"backward":0,"left":0,"right":1,"speed":speed})
 
 
+#recieving data
+def recieveData():
+	recieve=firebase.get('/movement',None)
+    return recieve
+
+
+
+    # write this code in your code for recieving it
+    #all commands
+    # forward=recieve.get('forward')
+    # backward=recieve.get('backward')
+    # speed=recieve.get('speed')
+    # right=recieve.get('right')
+    # left=recieve.get('left')
 
 
